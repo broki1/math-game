@@ -33,6 +33,9 @@ void AdditionGame()
         {
             Console.WriteLine("Your answer was incorrect.");
         }
+
+        Console.WriteLine("Enter any key to continue.");
+        Console.ReadLine();
     }
     Console.WriteLine($"Game over. Score: {score}/5");
 }
@@ -66,6 +69,9 @@ void SubtractionGame()
         {
             Console.WriteLine("Your answer was incorrect.");
         }
+
+        Console.WriteLine("Enter any key to continue.");
+        Console.ReadLine();
     }
     Console.WriteLine($"Game over. Score: {score}/5");
 }
@@ -99,6 +105,9 @@ void MultiplicationGame()
         {
             Console.WriteLine("Your answer was incorrect.");
         }
+
+        Console.WriteLine("Enter any key to continue.");
+        Console.ReadLine();
     }
     Console.WriteLine($"Game over. Score: {score}/5");
 }
@@ -116,8 +125,10 @@ void DivisionGame()
     {
         Console.Clear();
 
-        firstNumber = random.Next(1, 10);
-        secondNumber = random.Next(1, 10);
+        int[] numbers = GetDivisionNumbers();
+
+        firstNumber = numbers[0];
+        secondNumber = numbers[1];
 
         Console.WriteLine($"{firstNumber} / {secondNumber}");
 
@@ -132,6 +143,9 @@ void DivisionGame()
         {
             Console.WriteLine("Your answer was incorrect.");
         }
+
+        Console.WriteLine("Enter any key to continue.");
+        Console.ReadLine();
     }
     Console.WriteLine($"Game over. Score: {score}/5");
 }
@@ -185,4 +199,22 @@ string GetName()
 
     var name = Console.ReadLine();
     return name;
+}
+
+int[] GetDivisionNumbers()
+{
+    int number1;
+    int number2;
+
+    var random = new Random();
+
+    do
+    {
+        number1 = random.Next(1, 100);
+        number2 = random.Next(1, 100);
+    } while (number1 % number2 != 0);
+
+    int[] numbers = { number1, number2 };
+
+    return numbers;
 }
