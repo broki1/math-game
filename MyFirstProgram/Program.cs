@@ -1,5 +1,7 @@
 ﻿var date = DateTime.UtcNow.DayOfWeek;
 
+var games = new List<string>();
+
 var name = GetName();
 
 Menu(name);
@@ -37,7 +39,17 @@ void AdditionGame()
         Console.WriteLine("Enter any key to continue.");
         Console.ReadLine();
     }
+
+    AddToHistory(score, "Addition");
+
     Console.WriteLine($"Game over. Score: {score}/5");
+    Console.WriteLine("Enter any key to continue.");
+    Console.ReadLine();
+}
+
+void AddToHistory(int score, string gameType)
+{
+    games.Add($"{DateTime.Now} - {gameType}: {score} pts");
 }
 
 void SubtractionGame()
@@ -73,7 +85,11 @@ void SubtractionGame()
         Console.WriteLine("Enter any key to continue.");
         Console.ReadLine();
     }
+
+    AddToHistory(score, "Subtraction");
     Console.WriteLine($"Game over. Score: {score}/5");
+    Console.WriteLine("Enter any key to continue.");
+    Console.ReadLine();
 }
 
 void MultiplicationGame()
@@ -109,7 +125,11 @@ void MultiplicationGame()
         Console.WriteLine("Enter any key to continue.");
         Console.ReadLine();
     }
+    AddToHistory(score, "Multiplication");
+
     Console.WriteLine($"Game over. Score: {score}/5");
+    Console.WriteLine("Enter any key to continue.");
+    Console.ReadLine();
 }
 
 void DivisionGame()
@@ -147,7 +167,11 @@ void DivisionGame()
         Console.WriteLine("Enter any key to continue.");
         Console.ReadLine();
     }
+    AddToHistory(score, "Division");
+
     Console.WriteLine($"Game over. Score: {score}/5");
+    Console.WriteLine("Enter any key to continue.");
+    Console.ReadLine();
 }
 
 void Menu(string name)
@@ -158,39 +182,72 @@ void Menu(string name)
 
     Console.WriteLine(welcomeMessage);
 
-    Console.WriteLine(@$"What game would you like to play today? Choose from the options below:
+        bool gameOn = true;
 
-A - Addition
-S - Subtraction
-M - Multiplication
-D - Division
-Q - Quit the program
-");
-
-    var userChoice = Console.ReadLine().ToLower().Trim();
-
-    switch (userChoice)
+    do
     {
-        case "a":
-            AdditionGame();
-            break;
-        case "s":
-            SubtractionGame();
-            break;
-        case "m":
-            MultiplicationGame();
-            break;
-        case "d":
-            DivisionGame();
-            break;
-        case "q":
-            Console.WriteLine("Goodbye.");
-            Environment.Exit(0);
-            break;
-        default:
-            Console.WriteLine("Invalid input.");
-            break;
+
+
+        Console.WriteLine(@$"What game would you like to play today? Choose from the options below:
+        
+        V - Get game history
+        A - Addition
+        S - Subtraction
+        M - Multiplication
+        D - Division
+        Q - Quit the program
+        ");
+
+        var userChoice = Console.ReadLine().ToLower().Trim();
+
+        switch (userChoice)
+        {
+            case "v":
+                GetGames();
+                break;
+            case "a":
+                AdditionGame();
+                break;
+            case "s":
+                SubtractionGame();
+                break;
+            case "m":
+                MultiplicationGame();
+                break;
+            case "d":
+                DivisionGame();
+                break;
+            case "q":
+                gameOn = false;
+                break;
+            default:
+                Console.WriteLine("Invalid input.");
+                break;
+
+        }
+
+        Console.Clear();
+
+    } while (gameOn);
+
+    Console.WriteLine("Goodbye.");
+
+}
+
+void GetGames()
+{
+    Console.Clear();
+    Console.WriteLine("Games History:");
+    Console.WriteLine("--------------------\n");
+
+    foreach (var game in games)
+    {
+        Console.WriteLine(game);
     }
+    Console.WriteLine("--------------------\n");
+
+    Console.WriteLine("Enter any key to continue.");
+    Console.ReadLine();
 }
 
 string GetName()
