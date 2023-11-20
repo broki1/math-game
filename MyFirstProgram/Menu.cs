@@ -13,11 +13,14 @@
 
             Console.WriteLine(welcomeMessage);
 
+            Console.WriteLine("Enter any key to show menu.");
+            Console.ReadLine();
+
             bool gameOn = true;
 
             do
             {
-
+                Console.Clear();
 
                 Console.WriteLine(@$"What game would you like to play today? Choose from the options below:
         
@@ -37,16 +40,16 @@
                         Helpers.GetGames();
                         break;
                     case "a":
-                        gameEngine.AdditionGame();
+                        gameEngine.AdditionGame(Helpers.GetDifficulty());
                         break;
                     case "s":
-                        gameEngine.SubtractionGame();
+                        gameEngine.SubtractionGame(Helpers.GetDifficulty());
                         break;
                     case "m":
-                        gameEngine.MultiplicationGame();
+                        gameEngine.MultiplicationGame(Helpers.GetDifficulty());
                         break;
                     case "d":
-                        gameEngine.DivisionGame();
+                        gameEngine.DivisionGame(Helpers.GetDifficulty());
                         break;
                     case "q":
                         gameOn = false;
@@ -56,8 +59,6 @@
                         break;
 
                 }
-
-                Console.Clear();
 
             } while (gameOn);
 

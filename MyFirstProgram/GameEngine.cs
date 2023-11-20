@@ -5,12 +5,16 @@ namespace MyFirstProgram
     internal class GameEngine
     {
 
-        internal void AdditionGame()
+        internal void AdditionGame(string difficulty)
         {
             var random = new Random();
 
             int firstNumber;
             int secondNumber;
+
+            int min = Helpers.GetMin(difficulty);
+
+            int max = Helpers.GetMax(difficulty);
 
             var score = 0;
 
@@ -18,18 +22,13 @@ namespace MyFirstProgram
             {
                 Console.Clear();
 
-                firstNumber = random.Next(1, 10);
-                secondNumber = random.Next(1, 10);
+                firstNumber = random.Next(min, max);
+                secondNumber = random.Next(min, max);
 
                 Console.WriteLine($"{firstNumber} + {secondNumber}");
 
                 var input = Console.ReadLine();
-
-                while (string.IsNullOrEmpty(input) || !int.TryParse(input, out _))
-                {
-                    Console.WriteLine("Your answer needs to be an integer. Try again.");
-                    input = Console.ReadLine();
-                }
+                input = Helpers.ValidateResult(input);
 
                 if (int.Parse(input) == firstNumber + secondNumber)
                 {
@@ -52,12 +51,16 @@ namespace MyFirstProgram
             Console.ReadLine();
         }
 
-        internal void SubtractionGame()
+        internal void SubtractionGame(string difficulty)
         {
             var random = new Random();
 
             int firstNumber;
             int secondNumber;
+
+            int min = Helpers.GetMin(difficulty);
+
+            int max = Helpers.GetMax(difficulty);
 
             var score = 0;
 
@@ -65,17 +68,13 @@ namespace MyFirstProgram
             {
                 Console.Clear();
 
-                firstNumber = random.Next(1, 10);
-                secondNumber = random.Next(1, 10);
+                firstNumber = random.Next(min, max);
+                secondNumber = random.Next(min, max);
 
                 Console.WriteLine($"{firstNumber} - {secondNumber}");
 
                 var input = Console.ReadLine();
-                while (string.IsNullOrEmpty(input) || !int.TryParse(input, out _))
-                {
-                    Console.WriteLine("Your answer needs to be an integer. Try again.");
-                    input = Console.ReadLine();
-                }
+                input = Helpers.ValidateResult(input);
 
 
                 if (int.Parse(input) == firstNumber - secondNumber)
@@ -98,12 +97,16 @@ namespace MyFirstProgram
             Console.ReadLine();
         }
 
-        internal void MultiplicationGame()
+        internal void MultiplicationGame(string difficulty)
         {
             var random = new Random();
 
             int firstNumber;
             int secondNumber;
+
+            int min = Helpers.GetMin(difficulty);
+
+            int max = Helpers.GetMax(difficulty);
 
             var score = 0;
 
@@ -111,12 +114,13 @@ namespace MyFirstProgram
             {
                 Console.Clear();
 
-                firstNumber = random.Next(1, 10);
-                secondNumber = random.Next(1, 10);
+                firstNumber = random.Next(min, max);
+                secondNumber = random.Next(min, max);
 
                 Console.WriteLine($"{firstNumber} * {secondNumber}");
 
                 var input = Console.ReadLine();
+                input = Helpers.ValidateResult(input);
 
                 while (string.IsNullOrEmpty(input) || !int.TryParse(input, out _))
                 {
@@ -144,7 +148,7 @@ namespace MyFirstProgram
             Console.ReadLine();
         }
 
-        internal void DivisionGame()
+        internal void DivisionGame(string difficulty)
         {
             var random = new Random();
 
@@ -157,7 +161,7 @@ namespace MyFirstProgram
             {
                 Console.Clear();
 
-                int[] numbers = Helpers.GetDivisionNumbers();
+                int[] numbers = Helpers.GetDivisionNumbers(difficulty);
 
                 firstNumber = numbers[0];
                 secondNumber = numbers[1];
@@ -165,6 +169,7 @@ namespace MyFirstProgram
                 Console.WriteLine($"{firstNumber} / {secondNumber}");
 
                 var input = Console.ReadLine();
+                input = Helpers.ValidateResult(input);
 
                 while (string.IsNullOrEmpty(input) || !int.TryParse(input, out _))
                 {

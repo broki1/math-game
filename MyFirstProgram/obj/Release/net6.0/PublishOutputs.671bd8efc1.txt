@@ -1,0 +1,5 @@
+C:\Users\justi\FinishedProjects\MathGame\MyFirstProgram.exe
+C:\Users\justi\FinishedProjects\MathGame\MyFirstProgram.dll
+C:\Users\justi\FinishedProjects\MathGame\MyFirstProgram.deps.json
+C:\Users\justi\FinishedProjects\MathGame\MyFirstProgram.runtimeconfig.json
+C:\Users\justi\FinishedProjects\MathGame\MyFirstProgram.pdb

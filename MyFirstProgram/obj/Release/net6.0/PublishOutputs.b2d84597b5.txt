@@ -1,0 +1,5 @@
+C:\Users\justi\FinishedProjects\MyFirstProgram.exe
+C:\Users\justi\FinishedProjects\MyFirstProgram.dll
+C:\Users\justi\FinishedProjects\MyFirstProgram.deps.json
+C:\Users\justi\FinishedProjects\MyFirstProgram.runtimeconfig.json
+C:\Users\justi\FinishedProjects\MyFirstProgram.pdb
