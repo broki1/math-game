@@ -25,6 +25,12 @@ namespace MyFirstProgram
 
                 var input = Console.ReadLine();
 
+                while (string.IsNullOrEmpty(input) || !int.TryParse(input, out _))
+                {
+                    Console.WriteLine("Your answer needs to be an integer. Try again.");
+                    input = Console.ReadLine();
+                }
+
                 if (int.Parse(input) == firstNumber + secondNumber)
                 {
                     Console.WriteLine("Your answer was correct!");
@@ -65,6 +71,12 @@ namespace MyFirstProgram
                 Console.WriteLine($"{firstNumber} - {secondNumber}");
 
                 var input = Console.ReadLine();
+                while (string.IsNullOrEmpty(input) || !int.TryParse(input, out _))
+                {
+                    Console.WriteLine("Your answer needs to be an integer. Try again.");
+                    input = Console.ReadLine();
+                }
+
 
                 if (int.Parse(input) == firstNumber - secondNumber)
                 {
@@ -105,6 +117,12 @@ namespace MyFirstProgram
                 Console.WriteLine($"{firstNumber} * {secondNumber}");
 
                 var input = Console.ReadLine();
+
+                while (string.IsNullOrEmpty(input) || !int.TryParse(input, out _))
+                {
+                    Console.WriteLine("Your answer needs to be an integer. Try again.");
+                    input = Console.ReadLine();
+                }
 
                 if (int.Parse(input) == firstNumber * secondNumber)
                 {
@@ -147,6 +165,12 @@ namespace MyFirstProgram
                 Console.WriteLine($"{firstNumber} / {secondNumber}");
 
                 var input = Console.ReadLine();
+
+                while (string.IsNullOrEmpty(input) || !int.TryParse(input, out _))
+                {
+                    Console.WriteLine("Your answer needs to be an integer. Try again.");
+                    input = Console.ReadLine();
+                }
 
                 if (int.Parse(input) == firstNumber / secondNumber)
                 {
