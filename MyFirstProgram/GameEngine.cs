@@ -1,4 +1,6 @@
-﻿namespace MyFirstProgram
+﻿using MyFirstProgram.Models;
+
+namespace MyFirstProgram
 {
     internal class GameEngine
     {
@@ -37,7 +39,7 @@
                 Console.ReadLine();
             }
 
-            Helpers.AddToHistory(score, "Addition");
+            Helpers.AddToHistory(score, GameType.Addition);
 
             Console.WriteLine($"Game over. Score: {score}/5");
             Console.WriteLine("Enter any key to continue.");
@@ -78,7 +80,7 @@
                 Console.ReadLine();
             }
 
-            Helpers.AddToHistory(score, "Subtraction");
+            Helpers.AddToHistory(score, GameType.Subtraction);
             Console.WriteLine($"Game over. Score: {score}/5");
             Console.WriteLine("Enter any key to continue.");
             Console.ReadLine();
@@ -117,7 +119,7 @@
                 Console.WriteLine("Enter any key to continue.");
                 Console.ReadLine();
             }
-            Helpers.AddToHistory(score, "Multiplication");
+            Helpers.AddToHistory(score, GameType.Multiplication);
 
             Console.WriteLine($"Game over. Score: {score}/5");
             Console.WriteLine("Enter any key to continue.");
@@ -159,7 +161,7 @@
                 Console.WriteLine("Enter any key to continue.");
                 Console.ReadLine();
             }
-            Helpers.AddToHistory(score, "Division");
+            Helpers.AddToHistory(score, GameType.Division);
 
             Console.WriteLine($"Game over. Score: {score}/5");
             Console.WriteLine("Enter any key to continue.");
