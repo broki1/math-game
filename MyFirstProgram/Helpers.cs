@@ -46,13 +46,14 @@ namespace MyFirstProgram
             return numbers;
         }
 
-        internal static void AddToHistory(int score, GameType gameType)
+        internal static void AddToHistory(int score, GameType gameType, double totalSeconds)
         {
             games.Add(new Game
             {
                 Date = DateTime.Now,
                 Score = score,
-                Type = gameType
+                Type = gameType,
+                TotalSeconds = totalSeconds
             });
         }
 

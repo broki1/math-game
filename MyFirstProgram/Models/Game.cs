@@ -19,9 +19,11 @@ internal class Game
     public int Score { get; set; }
     public GameType Type { get; set; }
 
+    public double TotalSeconds { get; set; }
+
     public override string ToString()
     {
-        return $"{this.Date} - {this.Type}: {this.Score} pts";
+        return $"{this.Date} - {this.Type}: {this.Score} pts - {this.TotalSeconds} seconds";
     }
 
 }

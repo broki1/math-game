@@ -1,4 +1,5 @@
 ﻿using MyFirstProgram.Models;
+using System.Diagnostics;
 
 namespace MyFirstProgram
 {
@@ -17,6 +18,10 @@ namespace MyFirstProgram
             int max = Helpers.GetMax(difficulty);
 
             var score = 0;
+
+            var stopwatch = new Stopwatch();
+
+            stopwatch.Start();
 
             for (int i = 0; i < 5; i++)
             {
@@ -44,7 +49,11 @@ namespace MyFirstProgram
                 Console.ReadLine();
             }
 
-            Helpers.AddToHistory(score, GameType.Addition);
+            stopwatch.Stop();
+
+            var totalElapsedTime = Math.Round(stopwatch.Elapsed.TotalSeconds, 1);
+
+            Helpers.AddToHistory(score, GameType.Addition, totalElapsedTime);
 
             Console.WriteLine($"Game over. Score: {score}/5");
             Console.WriteLine("Enter any key to continue.");
@@ -64,6 +73,9 @@ namespace MyFirstProgram
 
             var score = 0;
 
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             for (int i = 0; i < 5; i++)
             {
                 Console.Clear();
@@ -75,7 +87,6 @@ namespace MyFirstProgram
 
                 var input = Console.ReadLine();
                 input = Helpers.ValidateResult(input);
-
 
                 if (int.Parse(input) == firstNumber - secondNumber)
                 {
@@ -91,7 +102,11 @@ namespace MyFirstProgram
                 Console.ReadLine();
             }
 
-            Helpers.AddToHistory(score, GameType.Subtraction);
+            stopwatch.Stop();
+
+            var totalElapsedTime = Math.Round(stopwatch.Elapsed.TotalSeconds, 1);
+
+            Helpers.AddToHistory(score, GameType.Addition, totalElapsedTime);
             Console.WriteLine($"Game over. Score: {score}/5");
             Console.WriteLine("Enter any key to continue.");
             Console.ReadLine();
@@ -109,6 +124,9 @@ namespace MyFirstProgram
             int max = Helpers.GetMax(difficulty);
 
             var score = 0;
+
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
 
             for (int i = 0; i < 5; i++)
             {
@@ -141,8 +159,11 @@ namespace MyFirstProgram
                 Console.WriteLine("Enter any key to continue.");
                 Console.ReadLine();
             }
-            Helpers.AddToHistory(score, GameType.Multiplication);
 
+            stopwatch.Stop();
+            var totalElapsedTime = Math.Round(stopwatch.Elapsed.TotalSeconds, 1);
+
+            Helpers.AddToHistory(score, GameType.Addition, totalElapsedTime);
             Console.WriteLine($"Game over. Score: {score}/5");
             Console.WriteLine("Enter any key to continue.");
             Console.ReadLine();
@@ -156,6 +177,8 @@ namespace MyFirstProgram
             int secondNumber;
 
             var score = 0;
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
 
             for (int i = 0; i < 5; i++)
             {
@@ -190,8 +213,10 @@ namespace MyFirstProgram
                 Console.WriteLine("Enter any key to continue.");
                 Console.ReadLine();
             }
-            Helpers.AddToHistory(score, GameType.Division);
+            stopwatch.Stop();
+            var totalElapsedTime = Math.Round(stopwatch.Elapsed.TotalSeconds, 1);
 
+            Helpers.AddToHistory(score, GameType.Addition, totalElapsedTime);
             Console.WriteLine($"Game over. Score: {score}/5");
             Console.WriteLine("Enter any key to continue.");
             Console.ReadLine();

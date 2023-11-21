@@ -12,3 +12,4 @@ C:\Users\justi\source\repos\MyFirstProgram\MyFirstProgram\obj\Debug\net6.0\refin
 C:\Users\justi\source\repos\MyFirstProgram\MyFirstProgram\obj\Debug\net6.0\MyFirstProgram.pdb
 C:\Users\justi\source\repos\MyFirstProgram\MyFirstProgram\obj\Debug\net6.0\MyFirstProgram.genruntimeconfig.cache
 C:\Users\justi\source\repos\MyFirstProgram\MyFirstProgram\obj\Debug\net6.0\ref\MyFirstProgram.dll
+C:\Users\justi\source\repos\MyFirstProgram\MyFirstProgram\obj\Debug\net6.0\MyFirstProgram.sourcelink.json
