@@ -114,5 +114,47 @@ namespace MyFirstProgram
 
             return max;
         }
+
+        internal static int GetNumberOfQuestions()
+        {
+            Console.Clear();
+            Console.WriteLine("Enter the number of questions you want to do.");
+
+            int numQuestions;
+
+            while (!int.TryParse(Console.ReadLine(), out numQuestions))
+            {
+                Console.WriteLine("Please enter a valid integer.");
+            }
+
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadLine();
+            return numQuestions;
+        }
+
+        internal static string[] GetRandomMathQuestion(int min, int max, string difficulty)
+        {
+            string[] operators = { "+", "-", "*", "/" };
+
+            var random = new Random();
+
+            var operatorsIndex = random.Next(operators.Length);
+
+            var firstNumber = random.Next(min, max).ToString();
+            var secondNumber = random.Next(min, max).ToString();
+
+            var operand = operators[operatorsIndex];
+
+            if (operand == "/")
+            {
+                int[] numbers = Helpers.GetDivisionNumbers(difficulty);
+                firstNumber = numbers[0].ToString();
+                secondNumber = numbers[1].ToString();
+            }
+
+            string[] statement = { firstNumber, operand, secondNumber };
+
+            return statement;
+        }
     }
 }

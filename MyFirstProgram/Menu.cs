@@ -29,6 +29,7 @@
                 S - Subtraction
                 M - Multiplication
                 D - Division
+                R - Random
                 Q - Quit the program
                 ");
 
@@ -50,6 +51,9 @@
                         break;
                     case "d":
                         gameEngine.DivisionGame(Helpers.GetDifficulty());
+                        break;
+                    case "r":
+                        gameEngine.RandomGame(Helpers.GetDifficulty());
                         break;
                     case "q":
                         gameOn = false;
